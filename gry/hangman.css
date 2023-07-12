@@ -1,0 +1,56 @@
+*{
+    text-align: center;
+    background-color: grey;
+    color: white;
+    font-size: 20px;
+    font-family: verdana;
+}
+
+.przyciski{
+    background-color: white;
+}
+.reset{
+    background-color: black;
+}
+.passwords{
+    display: inline-block;
+    padding: 5px;
+}
+button, header {
+    background-color: black; /* kolor tła */
+    border: none; /* brak obramowania */
+    color: white; /* kolor tekstu */
+    padding: 10px 20px; /* margines wewnętrzny */
+    text-align: center; /* wyśrodkowanie tekstu */
+    text-decoration: none; /* brak podkreślenia */
+    display: inline-block; /* wyświetlanie jako blok */
+    font-size: 16px; /* rozmiar czcionki */
+    margin: 4px 2px; /* margines zewnętrzny */
+    cursor: pointer; /* kursor myszy */
+    border-radius: 8px; /* zaokrąglenie rogów */
+    transition-duration: 0.4s; /* czas trwania animacji */
+  }
+  
+  button:hover {
+    background-color: #3e8e41; /* kolor tła po najechaniu myszą */
+    color: white; /* kolor tekstu po najechaniu myszą */
+  }
+  #tabela{
+ display:flex ;
+ justify-content: center;
+  }
+  table{
+    font-family: Arial;
+    font-size:25px;
+    border: solid 6px black;
+    border-collapse: collapse;
+    
+}
+th{
+    border: solid 6px black;
+    
+}
+td{
+    border: solid 6px black;
+    
+}

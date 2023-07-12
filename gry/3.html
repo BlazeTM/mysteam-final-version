@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zgadywanie liczb</title>
+    <link rel="stylesheet" href="zgadnij.css">
+</head>
+<body>
+    <div id="baner"><h2>Zgadywanie liczb - gra</h2></div>
+    <div id="levels">
+        <button onclick="level('easy')">Łatwe(2cyfry)</button>
+        <button onclick="level('normal')">Normalne(3cyfry)</button>
+        <button onclick="level('hard')">Trudne(4cyfry)</button>
+    </div>
+    <div id="start" hidden>
+        <button onclick="start()">start</button>
+    </div>
+    <div id="container" hidden>
+
+            <input id="number" type="number">
+            <button onclick="check()">Sprawdź</button>
+            <button id="btn">Pokaż Wyniki</button>
+
+    </div>
+<div id="tabela">
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Creation Time</th>
+            <th>Modification Time</th>
+            <th>Deleted</th>
+            <th>Game ID</th>
+            <th>Player ID</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody id="scoreTableBody">
+          <!-- Placeholder for table data -->
+        </tbody>
+      </table>
+    </div>
+    <script src="zgadnij.js"></script>
+</body>
+</html>

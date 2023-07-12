@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Zapisywanie danych - php</title>
+	<link rel="stylesheet" href="css/app.css">
+	<script src="https://kit.fontawesome.com/6673b37cfa.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id="app">
+		<div class="container color">
+			<div class="header ">
+				<div class="header-left">
+				<a class="shop">Sklep</a>
+				<a class="library">Biblioteka</a>
+				<a class="community">Społeczność</a></div>
+				<div class="header-right">
+				<a id="user" class="user">" + user + "</a>
+				<a class="logout">Wyloguj</a></div>
+			</div>
+			<div class="options">
+				<p class="gamelist">Lista Gier:</p>
+				<div class="filtrOption">
+					<span class="gamelist">filtruj: </span>
+					<div class="dropdown">
+						<button id="gamecategoryFiltr" class="listsBtns"><span id="gamecategoryFiltrtext">gatunek</span><img class="arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABvklEQVR4nO3Xz4dWURzH8df0c1oOKUmKJClJP0iJiIiIFplFZjdp12IWEy2iVdpEi2gRUUS0iIj+g9lEIkmSMUpKqSn97snlDNf1bTzPdO/zPJPz5mzuPZ/P9/M957rnXjKZTCaTyWQy/yW7cRrbex0EmzGObe0K9uAnWviOYb1jOGVopUxtNXEmCVol4YjuM1JayJkx1o5wJ35UhL8wqnuMpprlDEWmre0aHCtt3cz4jVOa52QQvtiJ450aHcbXilErPWJNMZYWqlzvG47O1fAQvgRNnFU/40GdIvyRfzXej+nA/Lxmw3/GwboK7MPHoMiFGrzPBb6fcEDN7MWHoNhlDMzBbwAXA7/ptOuNsANvg6JXsKDD8JcCn/fpK6BRitPwTVD8Bha2oS8avRro32GXLrEJL4MQN7FoFl3R4LVA97qTQ6ouNmIqCHMLi/8S/now/xW26BHr8DwIdReDpXlLcDuYN4kNesxaPAvC3cMyLMWd4P4LrNcnrMHTIOT9NKrXi7mFpq9YiUdB2Op4gtX6lBV4OEv4x1ilzxnCRBD+AZabJwxVmphI1+YVgziR/q7Kr9RMJpPJZDKZTIY/TYnN8w9HTIIAAAAASUVORK5CYII="></button>
+							<div id="gamecategoryFiltrList" class="dropdown-content1">
+								<a class="chooseOption gamecategoryFiltr">Logiczna</a>
+					  		</div>
+						</div>
+						<div class="dropdown">
+						<button id="platformFiltr" class="listsBtns"><span id="platformFiltrtext">platforma</span><img class="arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABvklEQVR4nO3Xz4dWURzH8df0c1oOKUmKJClJP0iJiIiIFplFZjdp12IWEy2iVdpEi2gRUUS0iIj+g9lEIkmSMUpKqSn97snlDNf1bTzPdO/zPJPz5mzuPZ/P9/M957rnXjKZTCaTyWQy/yW7cRrbex0EmzGObe0K9uAnWviOYb1jOGVopUxtNXEmCVol4YjuM1JayJkx1o5wJ35UhL8wqnuMpprlDEWmre0aHCtt3cz4jVOa52QQvtiJ450aHcbXilErPWJNMZYWqlzvG47O1fAQvgRNnFU/40GdIvyRfzXej+nA/Lxmw3/GwboK7MPHoMiFGrzPBb6fcEDN7MWHoNhlDMzBbwAXA7/ptOuNsANvg6JXsKDD8JcCn/fpK6BRitPwTVD8Bha2oS8avRro32GXLrEJL4MQN7FoFl3R4LVA97qTQ6ouNmIqCHMLi/8S/now/xW26BHr8DwIdReDpXlLcDuYN4kNesxaPAvC3cMyLMWd4P4LrNcnrMHTIOT9NKrXi7mFpq9YiUdB2Op4gtX6lBV4OEv4x1ilzxnCRBD+AZabJwxVmphI1+YVgziR/q7Kr9RMJpPJZDKZTIY/TYnN8w9HTIIAAAAASUVORK5CYII="></button>
+							<div id="platformFiltrList" class="dropdown-content1">
+								<a class="chooseOption platformFiltr">Html</a>
+							</div>
+						</div>
+				</div>
+				<div class="sortingOption">
+					<span class="gamelist">sortuj: </span>
+					<div class="dropdown">
+					<br>
+					<button id="sorting" class="listsBtns"><span id="sortingtext">ocena</span><img class="arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABvklEQVR4nO3Xz4dWURzH8df0c1oOKUmKJClJP0iJiIiIFplFZjdp12IWEy2iVdpEi2gRUUS0iIj+g9lEIkmSMUpKqSn97snlDNf1bTzPdO/zPJPz5mzuPZ/P9/M957rnXjKZTCaTyWQy/yW7cRrbex0EmzGObe0K9uAnWviOYb1jOGVopUxtNXEmCVol4YjuM1JayJkx1o5wJ35UhL8wqnuMpprlDEWmre0aHCtt3cz4jVOa52QQvtiJ450aHcbXilErPWJNMZYWqlzvG47O1fAQvgRNnFU/40GdIvyRfzXej+nA/Lxmw3/GwboK7MPHoMiFGrzPBb6fcEDN7MWHoNhlDMzBbwAXA7/ptOuNsANvg6JXsKDD8JcCn/fpK6BRitPwTVD8Bha2oS8avRro32GXLrEJL4MQN7FoFl3R4LVA97qTQ6ouNmIqCHMLi/8S/now/xW26BHr8DwIdReDpXlLcDuYN4kNesxaPAvC3cMyLMWd4P4LrNcnrMHTIOT9NKrXi7mFpq9YiUdB2Op4gtX6lBV4OEv4x1ilzxnCRBD+AZabJwxVmphI1+YVgziR/q7Kr9RMJpPJZDKZTIY/TYnN8w9HTIIAAAAASUVORK5CYII="></button>
+							<div id="sortingList" class="dropdown-content1">
+								<a class="chooseOption sorting">Ocena - rosnaco</a>
+								<a class="chooseOption sorting">Ocena - malejaco</a>
+							</div>
+						</div>
+				</div>
+
+			</div>
+			<div class="main" >
+				<div  class="left">
+					<div id="games">
+						<div class="pagesofgames covered" id="page1"></div>
+						<div class="pagesofgames covered" id="page2"></div>
+						<div class="pagesofgames covered" id="page3"></div>
+						<div class="pagesofgames covered" id="page4"></div>
+						<div class="pagesofgames covered" id="page5"></div>
+					</div>
+					
+					<button onclick="openAddGame()" class="addgame">Dodaj grę</button>
+				</div>
+				
+				<div class="right">
+					<div class="left-main">
+					<div id="gameAdd" class="game-add">
+                        <div class="right-left">
+                            <input placeholder="wpisz tytuł gry" type="text" id="newgametitle" ><br>
+                            <button id="gamecategory" class="listsBtns"><span id="gamecategorytext">gatunek</span><img class="arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABvklEQVR4nO3Xz4dWURzH8df0c1oOKUmKJClJP0iJiIiIFplFZjdp12IWEy2iVdpEi2gRUUS0iIj+g9lEIkmSMUpKqSn97snlDNf1bTzPdO/zPJPz5mzuPZ/P9/M957rnXjKZTCaTyWQy/yW7cRrbex0EmzGObe0K9uAnWviOYb1jOGVopUxtNXEmCVol4YjuM1JayJkx1o5wJ35UhL8wqnuMpprlDEWmre0aHCtt3cz4jVOa52QQvtiJ450aHcbXilErPWJNMZYWqlzvG47O1fAQvgRNnFU/40GdIvyRfzXej+nA/Lxmw3/GwboK7MPHoMiFGrzPBb6fcEDN7MWHoNhlDMzBbwAXA7/ptOuNsANvg6JXsKDD8JcCn/fpK6BRitPwTVD8Bha2oS8avRro32GXLrEJL4MQN7FoFl3R4LVA97qTQ6ouNmIqCHMLi/8S/now/xW26BHr8DwIdReDpXlLcDuYN4kNesxaPAvC3cMyLMWd4P4LrNcnrMHTIOT9NKrXi7mFpq9YiUdB2Op4gtX6lBV4OEv4x1ilzxnCRBD+AZabJwxVmphI1+YVgziR/q7Kr9RMJpPJZDKZTIY/TYnN8w9HTIIAAAAASUVORK5CYII=">  </button>
+                            <div id="gamecategoryList" class="dropdown-content1">
+                                <a class="chooseOption gamecategory">logiczna</a>
+                              </div><br>
+                            <button id="platform" class="listsBtns"><span id="platformtext">platforma</span> <img class="arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABvklEQVR4nO3Xz4dWURzH8df0c1oOKUmKJClJP0iJiIiIFplFZjdp12IWEy2iVdpEi2gRUUS0iIj+g9lEIkmSMUpKqSn97snlDNf1bTzPdO/zPJPz5mzuPZ/P9/M957rnXjKZTCaTyWQy/yW7cRrbex0EmzGObe0K9uAnWviOYb1jOGVopUxtNXEmCVol4YjuM1JayJkx1o5wJ35UhL8wqnuMpprlDEWmre0aHCtt3cz4jVOa52QQvtiJ450aHcbXilErPWJNMZYWqlzvG47O1fAQvgRNnFU/40GdIvyRfzXej+nA/Lxmw3/GwboK7MPHoMiFGrzPBb6fcEDN7MWHoNhlDMzBbwAXA7/ptOuNsANvg6JXsKDD8JcCn/fpK6BRitPwTVD8Bha2oS8avRro32GXLrEJL4MQN7FoFl3R4LVA97qTQ6ouNmIqCHMLi/8S/now/xW26BHr8DwIdReDpXlLcDuYN4kNesxaPAvC3cMyLMWd4P4LrNcnrMHTIOT9NKrXi7mFpq9YiUdB2Op4gtX6lBV4OEv4x1ilzxnCRBD+AZabJwxVmphI1+YVgziR/q7Kr9RMJpPJZDKZTIY/TYnN8w9HTIIAAAAASUVORK5CYII="></button>
+                                <div id="platformList" class="dropdown-content1">
+                                    <a class="chooseOption platform">html</a>
+                                  </div>
+                            <br>
+                            <p>główny plik html gry</p>
+                            <input type="file" id="gamefilehtml"><br><br>
+                            <p>Pliki pomocnicze (zip)</p>
+                            <input type="file" id="gamefileadditional">
+                        </div>
+                        <div class="right-right">
+                            <img src="./images/lost-media.png" alt="puste zdjecie">
+                            <div class="screenshot">screenshot</div><br>
+                            <input type="file" id="screenshotfile">
+                            <button onclick="newGameData()" class="addgame">Dodaj grę</button>
+                        </div>
+                    </div>
+                    <div id="gameEdit" class="game-edit" hidden>
+                        <div class="right-left">
+                            <input placeholder="wpisz tytuł gry" type="text" id="editgametitle" ><br>
+                            <button id="editgamecategory" class="listsBtns"><span id="editgamecategorytext">gatunek</span><img id="editgamecategory" class="arrow listsBtns" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABvklEQVR4nO3Xz4dWURzH8df0c1oOKUmKJClJP0iJiIiIFplFZjdp12IWEy2iVdpEi2gRUUS0iIj+g9lEIkmSMUpKqSn97snlDNf1bTzPdO/zPJPz5mzuPZ/P9/M957rnXjKZTCaTyWQy/yW7cRrbex0EmzGObe0K9uAnWviOYb1jOGVopUxtNXEmCVol4YjuM1JayJkx1o5wJ35UhL8wqnuMpprlDEWmre0aHCtt3cz4jVOa52QQvtiJ450aHcbXilErPWJNMZYWqlzvG47O1fAQvgRNnFU/40GdIvyRfzXej+nA/Lxmw3/GwboK7MPHoMiFGrzPBb6fcEDN7MWHoNhlDMzBbwAXA7/ptOuNsANvg6JXsKDD8JcCn/fpK6BRitPwTVD8Bha2oS8avRro32GXLrEJL4MQN7FoFl3R4LVA97qTQ6ouNmIqCHMLi/8S/now/xW26BHr8DwIdReDpXlLcDuYN4kNesxaPAvC3cMyLMWd4P4LrNcnrMHTIOT9NKrXi7mFpq9YiUdB2Op4gtX6lBV4OEv4x1ilzxnCRBD+AZabJwxVmphI1+YVgziR/q7Kr9RMJpPJZDKZTIY/TYnN8w9HTIIAAAAASUVORK5CYII="></button>
+                            <div id="editgamecategoryList" class="dropdown-content1">
+                                <a class="chooseOption editgamecategory">logiczna</a>
+                              </div><br>
+                            <button id="editplatform" class="listsBtns"><span id="editplatformtext">gatunek</span><img id="editplatform" class="arrow listsBtns" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABvklEQVR4nO3Xz4dWURzH8df0c1oOKUmKJClJP0iJiIiIFplFZjdp12IWEy2iVdpEi2gRUUS0iIj+g9lEIkmSMUpKqSn97snlDNf1bTzPdO/zPJPz5mzuPZ/P9/M957rnXjKZTCaTyWQy/yW7cRrbex0EmzGObe0K9uAnWviOYb1jOGVopUxtNXEmCVol4YjuM1JayJkx1o5wJ35UhL8wqnuMpprlDEWmre0aHCtt3cz4jVOa52QQvtiJ450aHcbXilErPWJNMZYWqlzvG47O1fAQvgRNnFU/40GdIvyRfzXej+nA/Lxmw3/GwboK7MPHoMiFGrzPBb6fcEDN7MWHoNhlDMzBbwAXA7/ptOuNsANvg6JXsKDD8JcCn/fpK6BRitPwTVD8Bha2oS8avRro32GXLrEJL4MQN7FoFl3R4LVA97qTQ6ouNmIqCHMLi/8S/now/xW26BHr8DwIdReDpXlLcDuYN4kNesxaPAvC3cMyLMWd4P4LrNcnrMHTIOT9NKrXi7mFpq9YiUdB2Op4gtX6lBV4OEv4x1ilzxnCRBD+AZabJwxVmphI1+YVgziR/q7Kr9RMJpPJZDKZTIY/TYnN8w9HTIIAAAAASUVORK5CYII="></button>
+                                <div id="editplatformList" class="dropdown-content1">
+                                    <a class="chooseOption editplatform">html</a>
+                                  </div>
+                            <br>
+                            <p>główny plik html gry</p>
+                            <input type="file" id="gamefilehtml"><br><br>
+                            <p>Pliki pomocnicze (zip)</p>
+                            <input type="file" id="gamefileadditional">
+                        </div>
+                        <div class="right-right">
+                            <div id="editimg"><img src="./images/lost-media.png" alt="puste zdjecie"></div>
+                            <div class="screenshot">screenshot</div><br>
+                            <input type="file" id="screenshotfile">
+                            <button onclick="editGameData()" id="editgamebtn" class="addgame">Dodaj grę</button>
+                        </div>
+                    </div>
+				</div>
+				<div class="right-main">
+
+				</div>
+				</div>	
+			</div>
+			<div class="background">
+				<div class="pagesbtns">
+					<button class="pagebtn backPage"><</button>
+					<button class="pagebtn page1">1</button>
+					<button class="pagebtn page2">2</button>
+					<button class="pagebtn page3">3</button>
+					<button class="pagebtn page4">4</button>
+					<button class="pagebtn page5">5</button>
+					<button class="pagebtn nextPage">></button>
+				</div>
+				<div class="stars">
+					<input type="radio" id="star5" name="star" value="5">
+					<label for="star5"> Five Stars </label>
+		
+					<input type="radio" id="star4" name="star" value="4">
+					<label for="star4"> Four Stars </label>
+		
+					<input type="radio" id="star3" name="star" value="3">
+					<label for="star3"> Three Stars </label>
+		
+					<input type="radio" id="star2" name="star" value="2">
+					<label for="star2"> Two Stars </label>
+		
+					<input type="radio" id="star1" name="star" value="1">
+					<label for="star1"> One Star </label>
+				  </div>
+                  
+			</div>
+		</div>	<br>
+        
+	</div>
+	<footer><a  href="https://icons8.com/icon/4eI6oLXt9GRU/arrow">Arrow</a> icon by <a href="https://icons8.com">Icons8</a></footer>	
+
+<script data-main="scripts/main" src="scripts/lib/require.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gra w wisielca</title>
+    <link rel="stylesheet" href="hangman.css">
+</head>
+<body>
+    
+    <div id="select-level">
+        <h1>Poziom trudności</h1>
+    <button onclick="selectLevel('easy')" id="easy">Łatwy</button>
+    <button onclick="selectLevel('normal')" id="normal">Normalny</button>
+    <button onclick="selectLevel('hard')" id="hard">Trudny</button>
+    </div>
+    <div id="category" hidden>
+        <h1>Wybierz kategorie, z której zostanie wylosowane hasło</h1>
+        <button onclick="categorySelect('general')" id="category-general">Ogólne</button>
+    </div>
+    <div id="game" hidden>
+        <button id="header">Gra w wisielca</button>
+        <button id="btn">Pokaż wyniki</button>
+        <div id="imge" ><img src="0.png" alt="miejsce na obrazek wisielec"><br></div>
+        
+        <div id="button-start">
+        <button  onclick="start()">Start</button></div>
+        <div id="password"></div>
+        <div id="buttons">
+            
+
+        </div>
+        <div id="results" hidden></div>
+    </div>
+    <div id="tabela">
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Creation Time</th>
+            <th>Modification Time</th>
+            <th>Deleted</th>
+            <th>Game ID</th>
+            <th>Player ID</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody id="scoreTableBody">
+          <!-- Placeholder for table data -->
+        </tbody>
+      </table></div>
+    <script src="hangman.js"></script>
+</body>
+</html>

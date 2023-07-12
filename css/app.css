@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Lobster&display=swap');
+
+:root {
+  --main-bg-color: #1d2029;
+  --second-bg-color: #0d0e12;
+  --third-bg-color:  #090a0d;
+  --main-fg-color: #c5c3c0;
+  --second-fg-color: #c5c3c0;
+}
+.gamelist{
+ font-size: 20px;
+ padding: 10px;
+ margin-left: 30px;
+}
+
+.color {
+  color: #c5c3c0;
+}
+
+.background {
+  margin: 0;
+    background-color: var(--main-bg-color);
+    color: var(--main-fg-color);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+}
+
+html{
+  background-color: var(--main-bg-color);
+  margin: 0;
+}
+
+footer{
+  font-family: Comfortaa;
+}
+
+.login{
+  color: #c5c3c0;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-right: 40px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #c5c3c0;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #c5c3c0;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.filtrOptions{
+display: flex;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content1 {
+  display: none;
+  position: absolute;
+  background-color: #c5c3c0;
+  border-radius: 10px;
+  border: gray 2px solid;
+  color :   black;
+  min-width: 180px;
+  font-size: 15px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+  z-index: 1;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content1 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+button{
+  background: #c5c3c0;
+  font-family: Comfortaa;
+  width: 180px;
+  height: 30px;
+  border: gray 2px solid;
+  color :   black;
+  border-radius: 10px;
+  display: flex;
+}
+.arrow{
+  max-height: 24px;
+  max-width: 24px;
+}
+.game-add{
+  display: none;
+}
+.item-description{
+  display: none;
+}
+.shown{
+  display:contents;
+  position: relative;
+}
+.shown1{
+  display:list-item;
+}
+.container{
+  font-family: Comfortaa;
+  margin: 0;
+  border :none;
+}
+.options{
+  height: 200px;
+}
+#games{
+  border: rgb(190, 181, 181) 1px solid;
+  height: 350px;
+}
+.pagesbtns{
+  display: flex;
+}
+.pagebtn{
+  height: 20px;
+  width: 30px;
+  
+}
+.covered{
+  display: none;
+}
+.left{
+  float: left;
+  width: 40%;
+  height: 350px;
+  margin-right: 50px;
+  margin-top: 20px;
+}
+
+.right{
+  padding: 10px;
+
+  height: 400px;
+  float: left;
+  width: 55%;
+
+}
+.right-left{
+  float: left;
+  width: 48%;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+.right-right{
+  float: left;
+  width: 48%;
+}
+.header
+{
+display: flex;
+flex-direction: row;
+font-family: Comfortaa;
+font-size: 2rem;
+font-weight: 300;
+margin-bottom: 20px;
+height: 85px;
+background-color: var(--second-bg-color);
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+}
+.pagesbtns{
+  float: left;
+  width: 50%;
+}
+.stars{
+  float: left;
+  width: 40%;
+}
+.header-left
+{
+width: 40%;
+margin-top: 25px;
+display: flex;
+justify-content: space-around;
+margin-right: 25%;
+}
+.header-right
+{
+width: 35%;
+margin-top: 25px;
+display: flex;
+justify-content: space-around;
+}
+#newgametitle{
+  width: 205px;
+  height: 25px;
+  border-radius: 10px;
+  border: rgb(190, 181, 181) 1px solid;
+}
+.gamecategory{
+  margin-top: 15px;
+}
+.platform{
+  margin-top: 15px;
+}
+.screenshot{
+  margin-top: 15px;
+  text-align: center;
+}
+.left-main{
+  float: left;
+  width: 70%;
+  border: rgb(190, 181, 181) 1px solid;
+  height: 400px;
+  padding: 10px;
+
+}
+.right-main{
+  float: left;
+  width: 30%;
+}
+.stars {
+  background: #1d2029;
+  height: 30px;
+  width: 200px;
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.item-header{
+ border: rgb(190, 181, 181) 1px solid;
+ font-size: 1.2rem;
+}
+
+.title{
+  margin-left: 33%;
+  
+}
+.stars input{
+  position: absolute;
+  left: -99999px;
+}
+
+label {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  color: transparent;
+}
+
+label::before {
+  content: '★';
+  color: #c0c0c0;
+  font-size: 30px;
+  line-height: 30px;
+  margin-right: -100%;
+}
+
+label:hover::before,
+label:hover ~ label::before,
+.stars input:checked ~ label::before {
+  color: #ffa500;
+}
